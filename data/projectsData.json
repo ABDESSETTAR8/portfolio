@@ -1,0 +1,146 @@
+[
+  {
+    "id": "neuro-credit-score",
+    "category": "AI/ML",
+    "featured": true,
+    "icon": "BrainCircuit",
+    "tags": ["Python", "PyTorch", "FastAPI", "Docker"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "NeuroCredit — AI Credit Scoring Engine",
+      "fr": "NeuroCredit — Moteur de Scoring de Crédit IA",
+      "ar": "NeuroCredit — محرك تقييم ائتماني بالذكاء الاصطناعي"
+    },
+    "description": {
+      "en": "A deep-learning risk model that scores loan applicants in real time, combining gradient-boosted trees with a neural embedding layer for alternative credit data. Deployed via FastAPI with sub-100ms inference.",
+      "fr": "Un modèle de risque en deep learning qui évalue les demandeurs de prêt en temps réel, combinant des arbres de gradient boosting avec une couche d'embedding neuronal pour des données de crédit alternatives. Déployé via FastAPI avec une inférence inférieure à 100 ms.",
+      "ar": "نموذج مخاطر قائم على التعلم العميق يقيّم طالبي القروض في الوقت الفعلي، يجمع بين أشجار التعزيز التدريجي وطبقة تضمين عصبية لبيانات ائتمانية بديلة. تم نشره عبر FastAPI باستجابة أقل من 100 مللي ثانية."
+    }
+  },
+  {
+    "id": "urban-traffic-sim",
+    "category": "Simulation",
+    "featured": true,
+    "icon": "Network",
+    "tags": ["Python", "SUMO", "Reinforcement Learning"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "Urban Traffic Flow Simulator",
+      "fr": "Simulateur de Flux de Trafic Urbain",
+      "ar": "محاكي تدفق حركة المرور الحضرية"
+    },
+    "description": {
+      "en": "An agent-based simulation modeling thousands of vehicles across a city grid, using reinforcement learning to optimize traffic-light timing and reduce average commute time by 23%.",
+      "fr": "Une simulation multi-agents modélisant des milliers de véhicules sur une grille urbaine, utilisant l'apprentissage par renforcement pour optimiser les feux de circulation et réduire le temps de trajet moyen de 23 %.",
+      "ar": "محاكاة قائمة على الوكلاء تنمذج آلاف المركبات عبر شبكة المدينة، باستخدام التعلم المعزز لتحسين توقيت إشارات المرور وتقليل متوسط زمن التنقل بنسبة 23٪."
+    }
+  },
+  {
+    "id": "saas-invoicing",
+    "category": "Full-Stack",
+    "featured": true,
+    "icon": "LayoutDashboard",
+    "tags": ["Next.js", "PostgreSQL", "Stripe", "Tailwind"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "Invoix — Multi-Tenant SaaS Billing Platform",
+      "fr": "Invoix — Plateforme de Facturation SaaS Multi-Tenant",
+      "ar": "Invoix — منصة فوترة SaaS متعددة المستأجرين"
+    },
+    "description": {
+      "en": "A full-stack subscription billing platform for SMEs: automated invoicing, Stripe payments, role-based dashboards, and real-time analytics — built on Next.js and PostgreSQL.",
+      "fr": "Une plateforme de facturation par abonnement full-stack pour les PME : facturation automatisée, paiements Stripe, tableaux de bord basés sur les rôles et analyses en temps réel — construite avec Next.js et PostgreSQL.",
+      "ar": "منصة فوترة اشتراكات متكاملة للشركات الصغيرة والمتوسطة: فوترة آلية، مدفوعات عبر Stripe، لوحات تحكم حسب الأدوار، وتحليلات لحظية — مبنية على Next.js وPostgreSQL."
+    }
+  },
+  {
+    "id": "doc-intel-pipeline",
+    "category": "AI/ML",
+    "featured": false,
+    "icon": "ScanText",
+    "tags": ["Python", "LangChain", "OCR", "Vector DB"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "DocIntel — Document Intelligence Pipeline",
+      "fr": "DocIntel — Pipeline d'Intelligence Documentaire",
+      "ar": "DocIntel — خط معالجة ذكي للمستندات"
+    },
+    "description": {
+      "en": "An OCR + LLM pipeline that extracts, classifies, and summarizes contracts and invoices, indexing results into a vector database for semantic search.",
+      "fr": "Un pipeline OCR + LLM qui extrait, classe et résume des contrats et factures, indexant les résultats dans une base de données vectorielle pour la recherche sémantique.",
+      "ar": "خط معالجة يجمع بين OCR ونماذج اللغة الكبيرة لاستخراج وتصنيف وتلخيص العقود والفواتير، مع فهرسة النتائج في قاعدة بيانات متجهية للبحث الدلالي."
+    }
+  },
+  {
+    "id": "epidemic-spread-model",
+    "category": "Simulation",
+    "featured": false,
+    "icon": "Activity",
+    "tags": ["Python", "NumPy", "Monte Carlo"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "Epidemic Spread Modeling Toolkit",
+      "fr": "Boîte à Outils de Modélisation de Propagation Épidémique",
+      "ar": "أداة نمذجة انتشار الأوبئة"
+    },
+    "description": {
+      "en": "A Monte Carlo simulation framework for modeling disease spread across population networks, used to compare intervention strategies under different parameters.",
+      "fr": "Un cadre de simulation Monte Carlo pour modéliser la propagation des maladies au sein de réseaux de population, utilisé pour comparer des stratégies d'intervention selon différents paramètres.",
+      "ar": "إطار محاكاة مونت كارلو لنمذجة انتشار الأمراض عبر شبكات سكانية، يُستخدم لمقارنة استراتيجيات التدخل تحت معايير مختلفة."
+    }
+  },
+  {
+    "id": "fieldops-mobile",
+    "category": "Full-Stack",
+    "featured": false,
+    "icon": "Smartphone",
+    "tags": ["React Native", "Node.js", "MongoDB"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "FieldOps — Field Service Management App",
+      "fr": "FieldOps — App de Gestion d'Interventions Terrain",
+      "ar": "FieldOps — تطبيق إدارة العمليات الميدانية"
+    },
+    "description": {
+      "en": "A cross-platform mobile app for field technicians: job scheduling, offline-first sync, GPS check-ins, and a Node.js/MongoDB backend with an admin dashboard.",
+      "fr": "Une application mobile multiplateforme pour techniciens de terrain : planification des interventions, synchronisation hors ligne, pointage GPS, avec un backend Node.js/MongoDB et un tableau de bord admin.",
+      "ar": "تطبيق جوال متعدد المنصات لفنيي الميدان: جدولة المهام، مزامنة تعمل دون اتصال، تسجيل الحضور عبر GPS، مع خلفية Node.js/MongoDB ولوحة تحكم إدارية."
+    }
+  },
+  {
+    "id": "supply-chain-twin",
+    "category": "Simulation",
+    "featured": false,
+    "icon": "Boxes",
+    "tags": ["Python", "SimPy", "Optimization"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "Digital Twin for Supply Chain Optimization",
+      "fr": "Jumeau Numérique pour l'Optimisation de la Chaîne d'Approvisionnement",
+      "ar": "توأم رقمي لتحسين سلسلة التوريد"
+    },
+    "description": {
+      "en": "A discrete-event simulation replicating an end-to-end supply chain, used to stress-test inventory policies and identify bottlenecks before real-world deployment.",
+      "fr": "Une simulation à événements discrets reproduisant une chaîne d'approvisionnement de bout en bout, utilisée pour tester les politiques de stock et identifier les goulots d'étranglement avant le déploiement réel.",
+      "ar": "محاكاة بالأحداث المنفصلة تحاكي سلسلة توريد متكاملة من البداية إلى النهاية، تُستخدم لاختبار سياسات المخزون وتحديد نقاط الاختناق قبل التطبيق الفعلي."
+    }
+  },
+  {
+    "id": "predictive-maintenance",
+    "category": "AI/ML",
+    "featured": false,
+    "icon": "Wrench",
+    "tags": ["Python", "Scikit-learn", "IoT", "Time Series"],
+    "links": { "demo": "#", "repo": "#" },
+    "title": {
+      "en": "Predictive Maintenance for Industrial IoT",
+      "fr": "Maintenance Prédictive pour l'IoT Industriel",
+      "ar": "الصيانة التنبؤية لإنترنت الأشياء الصناعي"
+    },
+    "description": {
+      "en": "Time-series anomaly detection on sensor streams from industrial equipment, predicting failures up to 72 hours in advance to cut unplanned downtime.",
+      "fr": "Détection d'anomalies sur des séries temporelles issues de capteurs d'équipements industriels, prédisant les pannes jusqu'à 72 heures à l'avance pour réduire les arrêts imprévus.",
+      "ar": "اكتشاف الشذوذ في السلاسل الزمنية لبيانات مستشعرات المعدات الصناعية، مع التنبؤ بالأعطال قبل 72 ساعة للحد من التوقف غير المخطط له."
+    }
+  }
+]

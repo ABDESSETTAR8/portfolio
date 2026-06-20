@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rached Mohammed Abdessettar — AI Engineer & CEO</title>
+  <meta name="description" content="Portfolio of Rached Mohammed Abdessettar — AI Engineer, Software & SaaS Developer, and CEO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Variables ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:        #1877F2;
+      --blue-dark:   #1464D8;
+      --blue-darker: #1260D0;
+      --blue-card:   rgba(14,84,184,0.55);
+      --yellow:      #FFD700;
+      --yellow-light:#FFE566;
+      --yellow-dark: #E6B800;
+      --white:       #ffffff;
+      --white-80:    rgba(255,255,255,0.80);
+      --white-70:    rgba(255,255,255,0.70);
+      --white-40:    rgba(255,255,255,0.40);
+      --yellow-20:   rgba(255,215,0,0.20);
+      --yellow-10:   rgba(255,215,0,0.10);
+      --shadow-gold: 0 0 28px rgba(255,215,0,0.45);
+      --shadow-gold-sm: 0 0 14px rgba(255,215,0,0.30);
+      --radius-card: 1rem;
+      --radius-pill: 9999px;
+      --font-sans:   'Inter', sans-serif;
+      --font-serif:  'Playfair Display', serif;
+      --transition:  0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: linear-gradient(160deg,#1877F2 0%,#1464D8 60%,#1260D0 100%);
+      background-attachment: fixed;
+      color: var(--white);
+      min-height: 100vh;
+    }
+    :dir(rtl) body,:dir(rtl) h1,:dir(rtl) h2,:dir(rtl) h3 {
+      font-family:'Noto Sans Arabic',var(--font-sans);
+    }
+    ::selection { background:var(--yellow); color:var(--blue-darker); }
+    ::-webkit-scrollbar{width:8px}
+    ::-webkit-scrollbar-track{background:var(--blue-darker)}
+    ::-webkit-scrollbar-thumb{background:var(--yellow);border-radius:4px}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+
+    /* ─── Utilities ─────────────────────────────────────── */
+    .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .container-sm{max-width:720px;margin:0 auto;padding:0 1.25rem}
+    .section{padding:5rem 1.25rem}
+    .section-label{text-align:center;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--yellow-light);opacity:.7;margin-bottom:.5rem}
+    :dir(rtl) .section-label{letter-spacing:.05em}
+    .section-title{font-family:var(--font-serif);font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:900;text-align:center;color:var(--yellow);margin-bottom:3.5rem}
+    .card{background:var(--blue-card);border:1.5px solid rgba(255,215,0,.18);border-radius:var(--radius-card);backdrop-filter:blur(8px);transition:border-color var(--transition),transform var(--transition),box-shadow var(--transition)}
+    .card:hover{border-color:rgba(255,215,0,.55);box-shadow:var(--shadow-gold-sm);transform:translateY(-5px)}
+    .pill-btn{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--yellow);border-radius:var(--radius-pill);padding:.75rem 1.5rem;font-size:.85rem;font-weight:700;color:var(--yellow);background:transparent;cursor:pointer;transition:all var(--transition);white-space:nowrap}
+    .pill-btn:hover{background:var(--yellow);color:var(--blue-darker);transform:scale(1.05);box-shadow:var(--shadow-gold)}
+    .pill-btn-filled{display:inline-flex;align-items:center;gap:.5rem;border:2px solid var(--yellow);border-radius:var(--radius-pill);padding:.75rem 1.5rem;font-size:.85rem;font-weight:700;color:var(--blue-darker);background:linear-gradient(135deg,var(--yellow-light),var(--yellow));cursor:pointer;transition:all var(--transition);animation:pulseGlow 2.5s ease-in-out infinite;white-space:nowrap}
+    .pill-btn-filled:hover{transform:scale(1.06);box-shadow:var(--shadow-gold)}
+    .tag{display:inline-block;border:1px solid rgba(255,215,0,.25);border-radius:var(--radius-pill);padding:.2rem .65rem;font-size:.68rem;color:var(--white-70);background:rgba(14,84,184,.4)}
+
+    /* ─── Animations ────────────────────────────────────── */
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes pulseGlow{0%,100%{box-shadow:0 0 14px rgba(255,215,0,.40)}50%{box-shadow:0 0 32px rgba(255,215,0,.85)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.10s}
+    .reveal-delay-2{transition-delay:.20s}
+    .reveal-delay-3{transition-delay:.30s}
+
+    /* ─── NAV ───────────────────────────────────────────── */
+    #main-nav{position:fixed;top:0;inset-inline:0;z-index:100;padding:1rem 1.25rem;transition:padding var(--transition)}
+    #main-nav.scrolled{padding:.5rem 1.25rem}
+    .nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;border:2px solid var(--yellow);border-radius:var(--radius-pill);padding:.55rem 1.25rem;background:rgba(14,84,184,.82);backdrop-filter:blur(12px);box-shadow:var(--shadow-gold-sm);animation:fadeIn .7s ease}
+    .nav-logo{font-family:var(--font-serif);font-size:1.1rem;font-weight:900;color:var(--yellow)}
+    .nav-links{display:flex;gap:1.75rem;list-style:none}
+    .nav-links a{font-size:.85rem;font-weight:600;color:var(--yellow);position:relative;transition:color var(--transition)}
+    .nav-links a::after{content:'';position:absolute;bottom:-2px;inset-inline-start:0;width:0;height:1.5px;background:var(--yellow-light);transition:width var(--transition)}
+    .nav-links a:hover::after{width:100%}
+    .nav-right{display:flex;align-items:center;gap:.6rem}
+    /* lang switcher */
+    .lang-switcher{position:relative}
+    .lang-btn{display:flex;align-items:center;gap:.35rem;border:2px solid rgba(255,215,0,.65);border-radius:var(--radius-pill);padding:.35rem .75rem;font-size:.8rem;font-weight:700;color:var(--yellow);background:transparent;cursor:pointer;transition:all var(--transition)}
+    .lang-btn:hover{border-color:var(--yellow);background:var(--yellow-10)}
+    .lang-btn svg{width:14px;height:14px;transition:transform .25s}
+    .lang-btn.open svg.chevron{transform:rotate(180deg)}
+    .lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:9rem;background:var(--blue-darker);border:2px solid rgba(255,215,0,.45);border-radius:1rem;overflow:hidden;box-shadow:var(--shadow-gold-sm);z-index:200}
+    .lang-dropdown.open{display:block}
+    .lang-option{display:block;width:100%;padding:.65rem 1rem;text-align:start;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);background:transparent;border:none;cursor:pointer;transition:all var(--transition)}
+    .lang-option:hover,.lang-option.active{background:var(--yellow-10);color:var(--yellow)}
+    /* hamburger */
+    .hamburger{display:none;align-items:center;justify-content:center;width:34px;height:34px;border:1.5px solid rgba(255,215,0,.5);border-radius:var(--radius-pill);background:transparent;cursor:pointer;color:var(--yellow);transition:all var(--transition)}
+    .hamburger:hover{border-color:var(--yellow);background:var(--yellow-10)}
+    .hamburger svg{width:18px;height:18px}
+    .mobile-menu{display:none;position:fixed;top:74px;inset-inline:1rem;z-index:99;background:rgba(14,84,184,.96);border:2px solid rgba(255,215,0,.55);border-radius:1.25rem;padding:1rem 0;backdrop-filter:blur(14px);box-shadow:var(--shadow-gold-sm)}
+    .mobile-menu.open{display:block;animation:fadeUp .25s ease}
+    .mobile-menu a{display:block;padding:.75rem 1.5rem;font-size:.9rem;font-weight:600;color:var(--yellow);transition:background var(--transition)}
+    .mobile-menu a:hover{background:var(--yellow-10)}
+
+    /* ─── HERO ──────────────────────────────────────────── */
+    #home{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 1.25rem 5rem;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:rgba(255,215,0,.06);border-radius:50%;filter:blur(60px);pointer-events:none}
+    .hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+    .portrait-wrap{margin-bottom:2rem}
+    .portrait{width:220px;height:220px;border-radius:50%;border:4px solid var(--yellow);box-shadow:var(--shadow-gold);object-fit:cover;object-position:center top}
+    .hero-name{font-family:var(--font-serif);font-size:clamp(1.5rem,4vw,2.8rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--yellow);margin-bottom:.5rem;animation:fadeUp .7s ease .3s both}
+    .hero-role{font-size:1.05rem;font-weight:600;color:var(--yellow-light);margin-bottom:1rem;animation:fadeUp .7s ease .45s both}
+    .hero-subtitle{max-width:540px;font-size:.92rem;line-height:1.7;color:var(--white-70);margin-bottom:2.5rem;animation:fadeUp .7s ease .6s both}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;animation:fadeUp .7s ease .75s both}
+
+    /* ─── CREDENTIALS ───────────────────────────────────── */
+    .timeline{position:relative;padding-inline-start:2.5rem;display:flex;flex-direction:column;gap:2rem;max-width:680px;margin:0 auto}
+    .timeline::before{content:'';position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:rgba(255,215,0,.3)}
+    .timeline-item{position:relative}
+    .timeline-dot{position:absolute;inset-inline-start:-2.5rem;top:1rem;width:2rem;height:2rem;border-radius:50%;border:2px solid var(--yellow);background:var(--blue-dark);display:flex;align-items:center;justify-content:center;color:var(--yellow);box-shadow:var(--shadow-gold-sm);font-size:.85rem}
+    .timeline-card{padding:1.5rem}
+    .cred-year{display:inline-block;border:1px solid rgba(255,215,0,.4);border-radius:var(--radius-pill);background:var(--yellow-10);padding:.15rem .75rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--yellow);margin-bottom:.75rem}
+    .cred-title{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--yellow);margin-bottom:.25rem}
+    .cred-inst{font-size:.82rem;font-weight:600;color:rgba(255,230,102,.7);margin-bottom:.6rem}
+    .cred-desc{font-size:.83rem;line-height:1.65;color:var(--white-70)}
+
+    /* ─── PROJECTS ──────────────────────────────────────── */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.5rem}
+    .project-card{padding:1.5rem;display:flex;flex-direction:column;cursor:pointer;position:relative;overflow:hidden}
+    .project-card:hover .card-hover-overlay{opacity:1}
+    .card-hover-overlay{position:absolute;inset:0;background:rgba(14,84,184,.88);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;border-radius:var(--radius-card);backdrop-filter:blur(4px)}
+    .card-hover-text{font-size:1rem;font-weight:700;color:var(--yellow);border:2px solid var(--yellow);border-radius:var(--radius-pill);padding:.65rem 1.5rem;display:flex;align-items:center;gap:.5rem}
+    .card-hover-text svg{width:18px;height:18px}
+    .project-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:1.25rem}
+    .project-icon{width:48px;height:48px;flex-shrink:0;border:2px solid rgba(255,215,0,.35);border-radius:.75rem;background:var(--yellow-10);display:flex;align-items:center;justify-content:center;color:var(--yellow)}
+    .project-icon svg{width:22px;height:22px}
+    .project-cat{border:1px solid rgba(255,215,0,.3);border-radius:var(--radius-pill);background:var(--yellow-10);padding:.2rem .7rem;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--yellow);white-space:nowrap}
+    .project-title{font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:var(--yellow);line-height:1.3;margin-bottom:.6rem}
+    .project-desc{font-size:.82rem;line-height:1.65;color:var(--white-70);flex:1;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .project-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+    .project-links{display:flex;gap:1.25rem;border-top:1px solid rgba(255,215,0,.12);padding-top:.9rem;margin-top:auto}
+    .project-link{display:flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--yellow);transition:all var(--transition)}
+    .project-link:hover{color:var(--yellow-light)}
+    .project-link.secondary{color:var(--white-70)}
+    .project-link.secondary:hover{color:var(--yellow)}
+    .project-link svg{width:14px;height:14px}
+
+    /* ─── FILTER ────────────────────────────────────────── */
+    .filter-bar{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:3rem}
+    .filter-btn{border:2px solid rgba(255,215,0,.3);border-radius:var(--radius-pill);padding:.5rem 1.25rem;font-size:.82rem;font-weight:700;color:rgba(255,215,0,.7);background:transparent;cursor:pointer;transition:all var(--transition)}
+    .filter-btn:hover{border-color:var(--yellow);color:var(--yellow)}
+    .filter-btn.active{border-color:var(--yellow);background:linear-gradient(135deg,var(--yellow-light),var(--yellow));color:var(--blue-darker);box-shadow:var(--shadow-gold-sm)}
+
+    /* ─── BIO ───────────────────────────────────────────── */
+    .bio-card{padding:2.5rem;position:relative}
+    .quote-icon{color:rgba(255,215,0,.25)}
+    .quote-top{position:absolute;top:-1rem;inset-inline-start:2rem}
+    .quote-bottom{position:absolute;bottom:-1rem;inset-inline-end:2rem}
+    .bio-text{font-size:.9rem;line-height:1.8;color:var(--white-70);margin-bottom:1rem}
+    .bio-text:last-child{margin-bottom:0}
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer{border-top:1px solid rgba(255,215,0,.2);padding:3.5rem 1.25rem;text-align:center}
+    .footer-name{font-family:var(--font-serif);font-size:1.5rem;font-weight:900;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem}
+    .footer-tagline{font-size:.82rem;font-weight:500;color:var(--white-70);margin-bottom:1.5rem}
+    .footer-links{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:1.5rem}
+    .footer-link{display:flex;align-items:center;gap:.5rem;border:2px solid rgba(255,215,0,.35);border-radius:var(--radius-pill);padding:.55rem 1.2rem;font-size:.82rem;font-weight:600;color:var(--yellow);transition:all var(--transition)}
+    .footer-link:hover{border-color:var(--yellow);background:var(--yellow-10);box-shadow:var(--shadow-gold-sm)}
+    .footer-link svg{width:15px;height:15px}
+    .footer-copy{font-size:.75rem;color:rgba(255,255,255,.35)}
+
+    /* ═══════════════════════════════════════════════════════
+       PROJECT DETAIL MODAL (full-page overlay)
+    ═══════════════════════════════════════════════════════ */
+    #project-modal{
+      position:fixed;inset:0;z-index:500;
+      background:linear-gradient(160deg,#1877F2 0%,#1464D8 60%,#1260D0 100%);
+      overflow-y:auto;
+      opacity:0;pointer-events:none;
+      transition:opacity .35s ease;
+    }
+    #project-modal.open{opacity:1;pointer-events:all}
+
+    .modal-nav-bar{
+      position:sticky;top:0;z-index:10;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:.9rem 1.5rem;
+      background:rgba(14,84,184,.85);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,215,0,.2);
+    }
+    .modal-back-btn{
+      display:flex;align-items:center;gap:.5rem;
+      font-size:.88rem;font-weight:700;
+      color:var(--yellow);background:transparent;border:none;cursor:pointer;
+      padding:.5rem 1rem;border-radius:var(--radius-pill);
+      border:1.5px solid rgba(255,215,0,.4);
+      transition:all var(--transition);
+    }
+    .modal-back-btn:hover{background:var(--yellow-10);border-color:var(--yellow)}
+    .modal-back-btn svg{width:18px;height:18px}
+    .modal-nav-title{font-family:var(--font-serif);font-size:1rem;font-weight:700;color:var(--yellow-light)}
+
+    .modal-body{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+
+    .modal-project-image{
+      width:100%;max-height:340px;object-fit:cover;
+      border-radius:1.25rem;
+      border:2px solid rgba(255,215,0,.25);
+      box-shadow:var(--shadow-gold-sm);
+      margin-bottom:2rem;
+      background:var(--blue-dark);
+    }
+    .modal-image-placeholder{
+      width:100%;height:220px;
+      border-radius:1.25rem;
+      border:2px solid rgba(255,215,0,.25);
+      background:linear-gradient(135deg,rgba(255,215,0,.08) 0%,rgba(14,84,184,.5) 100%);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:2rem;
+    }
+    .modal-image-placeholder svg{width:72px;height:72px;opacity:.4;color:var(--yellow)}
+
+    .modal-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+    .modal-cat-badge{border:1.5px solid var(--yellow);border-radius:var(--radius-pill);background:var(--yellow-10);padding:.3rem .9rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--yellow)}
+
+    .modal-title{
+      font-family:var(--font-serif);
+      font-size:clamp(1.4rem,3.5vw,2.2rem);
+      font-weight:900;color:var(--yellow);
+      line-height:1.2;margin-bottom:1.25rem;
+    }
+
+    .modal-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+    .modal-tag{display:inline-block;border:1.5px solid rgba(255,215,0,.35);border-radius:var(--radius-pill);background:var(--yellow-10);padding:.3rem .8rem;font-size:.75rem;font-weight:600;color:var(--yellow-light)}
+
+    .modal-desc-heading{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,230,102,.6);margin-bottom:.75rem}
+    .modal-desc-text{
+      font-size:.92rem;line-height:1.85;color:var(--white-80);
+      border-inline-start:3px solid rgba(255,215,0,.35);
+      padding-inline-start:1.25rem;
+      margin-bottom:2.5rem;
+    }
+    :dir(rtl) .modal-desc-text{border-inline-start:3px solid rgba(255,215,0,.35)}
+
+    .modal-actions{display:flex;flex-wrap:wrap;gap:1rem}
+    .modal-actions .pill-btn-filled,
+    .modal-actions .pill-btn{animation:none;font-size:.85rem}
+
+    .modal-divider{border:none;border-top:1px solid rgba(255,215,0,.15);margin:2rem 0}
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .portrait{width:130px;height:130px}
+      .bio-card{padding:1.75rem 1.25rem}
+      .modal-body{padding:1.75rem 1rem 3rem}
+      .modal-actions{flex-direction:column}
+      .modal-actions .pill-btn-filled,
+      .modal-actions .pill-btn{justify-content:center}
+    }
+    @media(max-width:480px){
+      .hero-ctas{flex-direction:column;width:100%}
+      .pill-btn,.pill-btn-filled{width:100%;justify-content:center}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════ -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home">RMA</a>
+    <ul class="nav-links">
+      <li><a data-i18n="nav.credentials" href="#credentials">Credentials</a></li>
+      <li><a data-i18n="nav.projects"    href="#projects">Projects</a></li>
+      <li><a data-i18n="nav.library"     href="#library">Project Library</a></li>
+      <li><a data-i18n="nav.about"       href="#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn" id="lang-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="lang-label">EN</span>
+          <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-option active" data-locale="en">English</button>
+          <button class="lang-option"        data-locale="fr">Français</button>
+          <button class="lang-option"        data-locale="ar">العربية</button>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a data-i18n="nav.credentials" href="#credentials" onclick="closeMobileMenu()">Credentials</a>
+  <a data-i18n="nav.projects"    href="#projects"    onclick="closeMobileMenu()">Projects</a>
+  <a data-i18n="nav.library"     href="#library"     onclick="closeMobileMenu()">Project Library</a>
+  <a data-i18n="nav.about"       href="#about"       onclick="closeMobileMenu()">About</a>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="portrait-wrap">
+      <img class="portrait" src="./profile-picture.png" alt="Rached Mohammed Abdessettar" />
+    </div>
+    <h1 class="hero-name" data-i18n="hero.name">Rached Mohammed Abdessettar</h1>
+    <p  class="hero-role"  data-i18n="hero.title">AI Engineer & CEO</p>
+    <p  class="hero-subtitle" data-i18n="hero.subtitle">Master's in AI &amp; Databases · Software &amp; SaaS Developer · Building intelligent systems that scale.</p>
+    <div class="hero-ctas">
+      <a class="pill-btn-filled" href="https://meet.google.com/your-meeting-code" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="hero.bookCall">Reserve a Video Chat</span>
+      </a>
+      <a class="pill-btn" href="https://wa.me/213556354977" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span data-i18n="hero.whatsapp">Chat on WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     CREDENTIALS
+════════════════════════════════════════════════ -->
+<section id="credentials" class="section">
+  <div class="container-sm">
+    <p class="section-label reveal" data-i18n="credentials.subheading">Education & Credentials</p>
+    <h2 class="section-title reveal reveal-delay-1" data-i18n="credentials.heading">Academic Dossier</h2>
+    <div class="timeline" id="credentials-list"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     FEATURED PROJECTS
+════════════════════════════════════════════════ -->
+<section id="projects" class="section">
+  <div class="container">
+    <p class="section-label reveal" data-i18n="projects.featuredSubheading">The Showcase</p>
+    <h2 class="section-title reveal reveal-delay-1" data-i18n="projects.featuredHeading">Featured Projects</h2>
+    <div class="projects-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     PROJECT LIBRARY
+════════════════════════════════════════════════ -->
+<section id="library" class="section">
+  <div class="container">
+    <p class="section-label reveal" data-i18n="projects.librarySubheading">The Archive</p>
+    <h2 class="section-title reveal reveal-delay-1" data-i18n="projects.libraryHeading">Project Library</h2>
+    <div class="filter-bar" id="filter-bar"></div>
+    <div class="projects-grid" id="library-grid"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     FOUNDER'S BIO
+════════════════════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="container-sm">
+    <p class="section-label reveal" data-i18n="bio.subheading">From Research to Reality</p>
+    <h2 class="section-title reveal reveal-delay-1" data-i18n="bio.heading">Founder's Bio</h2>
+    <div class="card bio-card reveal reveal-delay-2">
+      <svg class="quote-icon quote-top" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.956.76-3.022.66-1.065 1.515-1.867 2.558-2.403L9.373 5c-.8.396-1.56.898-2.26 1.505-.71.607-1.34 1.305-1.9 2.094s-.98 1.68-1.25 2.69-.346 2.04-.217 3.1c.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003zm9.124 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.817-.56-.124-1.074-.13-1.54-.022-.16-.94.09-1.95.75-3.02.66-1.06 1.514-1.86 2.557-2.4L18.49 5c-.8.396-1.555.898-2.26 1.505-.708.607-1.34 1.305-1.894 2.094-.556.79-.97 1.68-1.24 2.69-.273 1-.345 2.04-.217 3.1.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003z"/></svg>
+      <div id="bio-paragraphs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer id="contact">
+  <p class="footer-name" data-i18n="hero.name">Rached Mohammed Abdessettar</p>
+  <p class="footer-tagline" data-i18n="footer.tagline">AI Engineer · Software & SaaS Developer · CEO</p>
+  <div class="footer-links">
+    <a class="footer-link" href="https://meet.google.com/your-meeting-code" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span data-i18n="hero.bookCall">Reserve a Video Chat</span>
+    </a>
+    <a class="footer-link" href="https://wa.me/213556354977" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span data-i18n="hero.whatsapp">Chat on WhatsApp</span>
+    </a>
+    <a class="footer-link" href="mailto:mohallali761@gmail.com">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span data-i18n="footer.getInTouch">Get in Touch</span>
+    </a>
+  </div>
+  <p class="footer-copy">© <span id="copy-year"></span> Rached Mohammed Abdessettar. <span data-i18n="footer.rights">All rights reserved.</span></p>
+</footer>
+
+<!-- ════════════════════════════════════════════════
+     PROJECT DETAIL MODAL
+════════════════════════════════════════════════ -->
+<div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
+
+  <div class="modal-nav-bar">
+    <button class="modal-back-btn" onclick="closeModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-i18n="modal.back">Back to Portfolio</span>
+    </button>
+    <span class="modal-nav-title" data-i18n="modal.details">Project Details</span>
+    <div style="width:140px"></div><!-- spacer -->
+  </div>
+
+  <div class="modal-body">
+    <!-- Image -->
+    <div id="modal-image-wrap"></div>
+
+    <!-- Meta -->
+    <div class="modal-meta">
+      <span class="modal-cat-badge" id="modal-cat-badge"></span>
+    </div>
+
+    <h1 class="modal-title" id="modal-title-text"></h1>
+
+    <!-- Tech tags -->
+    <div class="modal-tags" id="modal-tags"></div>
+
+    <hr class="modal-divider" />
+
+    <!-- Description -->
+    <p class="modal-desc-heading" data-i18n="modal.about">About this Project</p>
+    <p class="modal-desc-text" id="modal-desc"></p>
+
+    <!-- Action buttons -->
+    <div class="modal-actions">
+      <a class="pill-btn-filled" id="modal-github" href="#" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <span data-i18n="modal.github">View on GitHub</span>
+      </a>
+      <a class="pill-btn" id="modal-download" href="#" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="modal.download">Download Application</span>
+      </a>
+      <a class="pill-btn" id="modal-report" href="#" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <span data-i18n="modal.report">View / Download Report</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+// ── TRANSLATIONS ──────────────────────────────────────────────────────────────
+const T = {
+  en: {
+    "nav.credentials":"Credentials","nav.projects":"Projects","nav.library":"Project Library","nav.about":"About",
+    "hero.name":"Rached Mohammed Abdessettar","hero.title":"AI Engineer & CEO",
+    "hero.subtitle":"Master's in AI & Databases · Software & SaaS Developer · Building intelligent systems that scale.",
+    "hero.bookCall":"Reserve a Video Chat","hero.whatsapp":"Chat on WhatsApp",
+    "credentials.heading":"Academic Dossier","credentials.subheading":"Education & Credentials",
+    "projects.featuredHeading":"Featured Projects","projects.featuredSubheading":"The Showcase",
+    "projects.libraryHeading":"Project Library","projects.librarySubheading":"The Archive",
+    "projects.filterAll":"All","projects.viewProject":"View Project",
+    "projects.cat.AIML":"AI / ML","projects.cat.Simulation":"Simulation","projects.cat.FullStack":"Full-Stack Apps","projects.cat.SaaSApps":"SaaS / Web Apps",
+    "bio.heading":"Founder's Bio","bio.subheading":"From Research to Reality",
+    "bio.p1":"My journey began with a deep curiosity for how intelligent systems learn, reason, and make decisions — a curiosity that led me to pursue a License in Computer Science at Amar Telidji University, followed by a Master's in Artificial Intelligence & Databases spanning the University of Aflou and the University of Oran.",
+    "bio.p2":"But academic rigor alone doesn't ship products. As CEO, I translate research-grade thinking into operational software: SaaS platforms, simulations, and AI-driven tools that solve real business problems for real clients.",
+    "bio.p3":"I bridge the gap between the lab and the market — combining a scientist's precision with a founder's drive to deliver measurable results.",
+    "footer.tagline":"AI Engineer · Software & SaaS Developer · CEO","footer.rights":"All rights reserved.","footer.getInTouch":"Get in Touch",
+    "cred.0.year":"2020 — 2023","cred.0.title":"License (Bachelor's Degree)","cred.0.inst":"Amar Telidji University, Laghouat","cred.0.desc":"Foundational degree in Computer Science, building strong fundamentals in algorithms, data structures, and software engineering.",
+    "cred.1.year":"2023 — 2024","cred.1.title":"Master's in AI & Databases — Year 1","cred.1.inst":"University of Aflou","cred.1.desc":"First year of graduate studies focused on artificial intelligence, machine learning theory, and advanced database systems.",
+    "cred.2.year":"2024 — Present","cred.2.title":"Master's in AI & Databases — Year 2","cred.2.inst":"University of Oran","cred.2.desc":"Continuing graduate research in applied AI, big data architectures, and intelligent information systems.",
+    "modal.back":"Back to Portfolio","modal.details":"Project Details","modal.about":"About this Project",
+    "modal.github":"View on GitHub","modal.visitSite":"Visit Live Site","modal.download":"Download Application","modal.report":"View / Download Report",
+  },
+  fr: {
+    "nav.credentials":"Diplômes","nav.projects":"Projets","nav.library":"Bibliothèque","nav.about":"À propos",
+    "hero.name":"Rached Mohammed Abdessettar","hero.title":"Ingénieur IA & CEO",
+    "hero.subtitle":"Master en IA & Bases de Données · Développeur Logiciel & SaaS · Conception de systèmes intelligents évolutifs.",
+    "hero.bookCall":"Réserver un Appel Vidéo","hero.whatsapp":"Discuter sur WhatsApp",
+    "credentials.heading":"Dossier Académique","credentials.subheading":"Formation & Diplômes",
+    "projects.featuredHeading":"Projets Phares","projects.featuredSubheading":"La Vitrine",
+    "projects.libraryHeading":"Bibliothèque de Projets","projects.librarySubheading":"Les Archives",
+    "projects.filterAll":"Tous","projects.viewProject":"Voir le Projet",
+    "projects.cat.AIML":"IA / ML","projects.cat.Simulation":"Simulation","projects.cat.FullStack":"Applications Full-Stack","projects.cat.SaaSApps":"SaaS / Applications Web",
+    "bio.heading":"Biographie du Fondateur","bio.subheading":"De la Recherche à la Réalité",
+    "bio.p1":"Mon parcours a commencé par une profonde curiosité pour la façon dont les systèmes intelligents apprennent, raisonnent et prennent des décisions — une curiosité qui m'a conduit à une Licence en Informatique à l'Université Amar Telidji, puis à un Master en Intelligence Artificielle & Bases de Données entre l'Université d'Aflou et l'Université d'Oran.",
+    "bio.p2":"Mais la rigueur académique seule ne suffit pas à livrer des produits. En tant que CEO, je transforme une réflexion de niveau recherche en logiciels opérationnels : plateformes SaaS, simulations et outils pilotés par l'IA qui résolvent de vrais problèmes pour de vrais clients.",
+    "bio.p3":"Je fais le lien entre le laboratoire et le marché — en combinant la précision d'un scientifique avec la détermination d'un fondateur pour obtenir des résultats mesurables.",
+    "footer.tagline":"Ingénieur IA · Développeur Logiciel & SaaS · CEO","footer.rights":"Tous droits réservés.","footer.getInTouch":"Me Contacter",
+    "cred.0.year":"2020 — 2023","cred.0.title":"Licence","cred.0.inst":"Université Amar Telidji, Laghouat","cred.0.desc":"Licence en informatique, avec des bases solides en algorithmique, structures de données et génie logiciel.",
+    "cred.1.year":"2023 — 2024","cred.1.title":"Master en IA & Bases de Données — Année 1","cred.1.inst":"Université d'Aflou","cred.1.desc":"Première année de master axée sur l'intelligence artificielle, la théorie de l'apprentissage automatique et les bases de données avancées.",
+    "cred.2.year":"2024 — Présent","cred.2.title":"Master en IA & Bases de Données — Année 2","cred.2.inst":"Université d'Oran","cred.2.desc":"Poursuite des recherches en IA appliquée, architectures big data et systèmes d'information intelligents.",
+    "modal.back":"Retour","modal.details":"Détails du Projet","modal.about":"À propos du projet",
+    "modal.github":"Voir sur GitHub","modal.visitSite":"Visiter le site","modal.download":"Télécharger l'Application","modal.report":"Voir / Télécharger le Rapport",
+  },
+  ar: {
+    "nav.credentials":"المؤهلات","nav.projects":"المشاريع","nav.library":"أرشيف المشاريع","nav.about":"نبذة عني",
+    "hero.name":"راشد محمد عبد الستار","hero.title":"مهندس ذكاء اصطناعي ورئيس تنفيذي",
+    "hero.subtitle":"ماجستير في الذكاء الاصطناعي وقواعد البيانات · مطور برمجيات وحلول SaaS · أبني أنظمة ذكية قابلة للتوسع.",
+    "hero.bookCall":"احجز مكالمة فيديو","hero.whatsapp":"تواصل عبر واتساب",
+    "credentials.heading":"السجل الأكاديمي","credentials.subheading":"التعليم والمؤهلات",
+    "projects.featuredHeading":"أبرز المشاريع","projects.featuredSubheading":"الواجهة",
+    "projects.libraryHeading":"أرشيف المشاريع","projects.librarySubheading":"الأرشيف",
+    "projects.filterAll":"الكل","projects.viewProject":"عرض المشروع",
+    "projects.cat.AIML":"ذكاء اصطناعي / تعلم آلي","projects.cat.Simulation":"محاكاة","projects.cat.FullStack":"تطبيقات متكاملة","projects.cat.SaaSApps":"SaaS / تطبيقات ويب",
+    "bio.heading":"نبذة عن المؤسس","bio.subheading":"من البحث إلى الواقع",
+    "bio.p1":"بدأت رحلتي بفضول عميق حول كيفية تعلم الأنظمة الذكية واستدلالها واتخاذها للقرارات — وهو الفضول الذي قادني للحصول على ليسانس في الإعلام الآلي من جامعة عمار ثليجي، ثم ماجستير في الذكاء الاصطناعي وقواعد البيانات بين جامعة أفلو وجامعة وهران.",
+    "bio.p2":"لكن الدقة الأكاديمية وحدها لا تكفي لإطلاق المنتجات. بصفتي رئيسًا تنفيذيًا، أحوّل التفكير العلمي إلى برمجيات تشغيلية: منصات SaaS، ومحاكاة، وأدوات مدعومة بالذكاء الاصطناعي تحل مشاكل حقيقية لعملاء حقيقيين.",
+    "bio.p3":"أنا أربط بين المختبر والسوق — أجمع بين دقة الباحث وطموح المؤسس لتحقيق نتائج ملموسة.",
+    "footer.tagline":"مهندس ذكاء اصطناعي · مطور برمجيات وSaaS · رئيس تنفيذي","footer.rights":"جميع الحقوق محفوظة.","footer.getInTouch":"تواصل معي",
+    "cred.0.year":"2020 — 2023","cred.0.title":"ليسانس","cred.0.inst":"جامعة عمار ثليجي، الأغواط","cred.0.desc":"شهادة ليسانس في الإعلام الآلي، أسست قاعدة متينة في الخوارزميات وهياكل البيانات وهندسة البرمجيات.",
+    "cred.1.year":"2023 — 2024","cred.1.title":"ماجستير في الذكاء الاصطناعي — السنة الأولى","cred.1.inst":"جامعة أفلو","cred.1.desc":"السنة الأولى من الدراسات العليا، مع التركيز على الذكاء الاصطناعي ونظرية التعلم الآلي وأنظمة قواعد البيانات المتقدمة.",
+    "cred.2.year":"2024 — حتى الآن","cred.2.title":"ماجستير في الذكاء الاصطناعي — السنة الثانية","cred.2.inst":"جامعة وهران","cred.2.desc":"مواصلة البحث في الذكاء الاصطناعي التطبيقي، وهياكل البيانات الضخمة، وأنظمة المعلومات الذكية.",
+    "modal.back":"رجوع","modal.details":"تفاصيل المشروع","modal.about":"عن هذا المشروع",
+    "modal.github":"عرض على GitHub","modal.visitSite":"زيارة الموقع","modal.download":"تنزيل التطبيق","modal.report":"عرض / تنزيل التقرير",
+  }
+};
+
+// ── REAL PROJECTS DATA ─────────────────────────────────────────────────────────
+const PROJECTS = [
+  {
+    id: "food-delivery-jade",
+    cat: "AI/ML", featured: true, icon: "network",
+    repo: "ABDESSETTAR8/Multi-Agent-Food-Delivery-System",
+    github: "https://github.com/ABDESSETTAR8/Multi-Agent-Food-Delivery-System",
+    download: "https://github.com/ABDESSETTAR8/Multi-Agent-Food-Delivery-System/archive/refs/heads/main.zip",
+    report: "#",   // ⚠️ Replace with your PDF report link
+    tags: ["Java", "JADE", "Multi-Agent Systems", "FIPA-ACL", "Distributed AI"],
+    title: "Multi-Agent Food Delivery System",
+    shortDesc: "A distributed multi-agent simulation of a food delivery ecosystem built with the JADE framework, where autonomous agents negotiate and cooperate to fulfil delivery orders in real time.",
+    fullDesc: "A comprehensive multi-agent system that simulates a complete food delivery ecosystem using JADE (Java Agent DEvelopment Framework). The architecture features four distinct agent types: Customer Agents that place and track orders, Restaurant Agents that manage menus and coordinate meal preparation, Delivery Driver Agents that autonomously accept and execute deliveries, and a Coordinator Agent that orchestrates optimal matching and route planning.\n\nAgents communicate through ACL (Agent Communication Language) messages following FIPA standards, enabling realistic negotiation, the Contract-Net protocol for task allocation, and subscription-based event notifications. The system demonstrates the power of agent-based modelling for complex real-world logistics, exhibiting emergent coordination behaviours without central control. The GUI provides a live dashboard of agent states, message exchanges, and order lifecycle tracking.",
+  },
+  {
+    id: "optical-flow",
+    cat: "AI/ML", featured: false, icon: "activity",
+    repo: "ABDESSETTAR8/Estimation-de-Mouvement-Flux-Optique",
+    github: "https://github.com/ABDESSETTAR8/Estimation-de-Mouvement-Flux-Optique",
+    download: "https://github.com/ABDESSETTAR8/Estimation-de-Mouvement-Flux-Optique/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "OpenCV", "Lucas-Kanade", "DeepFlow", "NumPy", "Computer Vision"],
+    title: "Estimation de Mouvement — Flux Optique",
+    shortDesc: "A comparative study of classical Lucas-Kanade and deep-learning DeepFlow optical flow algorithms for motion estimation in video sequences.",
+    fullDesc: "This project implements and benchmarks two optical flow estimation paradigms for detecting and visualising motion in video sequences. The classical approach uses a pyramidal Lucas-Kanade algorithm (coarse-to-fine) for robust sparse optical flow on key feature points detected by the Shi-Tomasi corner detector. The deep learning approach integrates DeepFlow, a convolutional descriptor-based method capable of capturing large displacements and fine motion details that elude classical methods.\n\nBoth pipelines are evaluated on standard benchmark sequences (Middlebury, KITTI) and compared across End-Point Error (EPE), computational speed (FPS), and visual quality of the resulting flow fields. Results are visualised as colour-coded flow maps (using HSV encoding for direction and magnitude) and arrow vector fields overlaid on the original frames. The project provides a practical foundation for applications in video stabilisation, action recognition, autonomous driving, and surveillance.",
+  },
+  {
+    id: "brain-tumor",
+    cat: "AI/ML", featured: true, icon: "brain",
+    repo: "ABDESSETTAR8/Brain-Tumor-Segmentation-Using-Deep-Learning",
+    github: "https://github.com/ABDESSETTAR8/Brain-Tumor-Segmentation-Using-Deep-Learning",
+    download: "https://github.com/ABDESSETTAR8/Brain-Tumor-Segmentation-Using-Deep-Learning/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "TensorFlow", "Keras", "U-Net", "MRI", "DICOM", "Dice Loss", "Medical Imaging"],
+    title: "Brain Tumor Segmentation Using Deep Learning",
+    shortDesc: "An end-to-end deep learning pipeline using U-Net for automatic pixel-wise segmentation of brain tumors from multi-modal MRI scans.",
+    fullDesc: "A full deep learning pipeline for automatic segmentation of brain tumors from multi-modal MRI images (T1, T1ce, T2, FLAIR sequences). The core architecture is a U-Net with residual skip connections, trained end-to-end using a combined Dice loss and binary cross-entropy to handle the severe class imbalance between tumour and healthy tissue.\n\nPreprocessing includes DICOM loading, N4 bias field correction, per-patient intensity normalisation (z-score), and spatial co-registration of all MRI modalities. The model predicts three clinically relevant sub-regions: necrotic core (TC), peritumoral oedema (WT), and contrast-enhancing tumour (ET) as defined by the BraTS challenge protocol. Data augmentation (random flips, rotations ±15°, elastic deformations, intensity jitter) is applied online to improve generalisation. Post-processing with connected-component analysis removes small spurious predictions. The pipeline produces colour-overlaid segmentation masks for clinical review alongside Dice similarity coefficient and Hausdorff distance metrics.",
+  },
+  {
+    id: "theater-sim",
+    cat: "Simulation", featured: false, icon: "dashboard",
+    repo: "ABDESSETTAR8/Simulation-of-a-Theater-Service-System-Using-Discrete-Event-Modeling-SimPy-",
+    github: "https://github.com/ABDESSETTAR8/Simulation-of-a-Theater-Service-System-Using-Discrete-Event-Modeling-SimPy-",
+    download: "https://github.com/ABDESSETTAR8/Simulation-of-a-Theater-Service-System-Using-Discrete-Event-Modeling-SimPy-/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "SimPy", "Discrete-Event Simulation", "Queuing Theory", "NumPy", "Matplotlib"],
+    title: "Theater Service System Simulation (SimPy)",
+    shortDesc: "A discrete-event simulation of a theater's full service chain — ticketing, security, concessions, seating — to identify bottlenecks and optimise staff allocation.",
+    fullDesc: "A detailed discrete-event simulation of a theater's complete operational workflow, implemented with Python SimPy. The model simulates theater-goer arrivals following a Poisson process and tracks each patron through the full service chain: ticket purchase and validation desks, security and bag-check checkpoints, concession stand queues, programme collection, and finally seat allocation — all with configurable staff capacity and service-time distributions (Exponential, Erlang, Normal).\n\nThe simulation runs over a full show cycle (pre-show rush, intermission, post-show exit) and captures comprehensive statistics at each station: mean and 95th-percentile waiting times, queue length time-series, server utilisation rates, and total patron throughput. Matplotlib generates time-series plots and bar charts that clearly reveal system bottlenecks. A scenario analysis module allows running hundreds of replications with varied staffing levels to compute confidence intervals and recommend the optimal staffing configuration that minimises waiting time within a given budget constraint.",
+  },
+  {
+    id: "hospital-sim",
+    cat: "Simulation", featured: false, icon: "activity",
+    repo: "ABDESSETTAR8/Hospital-Waiting-Room-Simulation-Using-Discrete-Event-Modeling-SimPy-",
+    github: "https://github.com/ABDESSETTAR8/Hospital-Waiting-Room-Simulation-Using-Discrete-Event-Modeling-SimPy-",
+    download: "https://github.com/ABDESSETTAR8/Hospital-Waiting-Room-Simulation-Using-Discrete-Event-Modeling-SimPy-/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "SimPy", "Healthcare Analytics", "Priority Queues", "Matplotlib", "Pandas"],
+    title: "Hospital Waiting Room Simulation (SimPy)",
+    shortDesc: "A SimPy simulation of hospital patient flow through triage, priority queues, and consultation stages to help administrators optimise staffing and reduce wait times.",
+    fullDesc: "A discrete-event simulation modelling the complete patient journey through a hospital emergency waiting room, built with Python SimPy. Patients arrive at configurable inter-arrival rates drawn from an exponential distribution and are assigned priority levels at triage: P1 (critical), P2 (urgent), P3 (standard). A priority-based SimPy PriorityResource routes patients to available doctors and nurses, with separate treatment bays per severity level and preemption rules for critical arrivals.\n\nThe simulation records individual patient wait times from arrival to first contact, total length of stay, staff utilisation per shift, and capacity saturation events (when all resources are simultaneously occupied). Multiple scenarios can be run in batch — varying number of doctors, nurses, triage staff, and patient arrival rates — and results are aggregated into a Pandas DataFrame for statistical comparison. Generated reports include KPI dashboards with box plots, utilisation heat maps by hour of day, and recommendations on minimum staffing levels to keep median wait time below a target threshold.",
+  },
+  {
+    id: "vehicle-tracking",
+    cat: "AI/ML", featured: true, icon: "network",
+    repo: "ABDESSETTAR8/Vehicle-Tracking-with-YOLO",
+    github: "https://github.com/ABDESSETTAR8/Vehicle-Tracking-with-YOLO",
+    download: "https://github.com/ABDESSETTAR8/Vehicle-Tracking-with-YOLO/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "YOLOv8", "OpenCV", "DeepSORT", "Object Tracking", "Computer Vision"],
+    title: "Vehicle Tracking with YOLO",
+    shortDesc: "Real-time multi-vehicle detection and persistent tracking in traffic video using YOLOv8 for detection and DeepSORT for identity-preserving cross-frame tracking.",
+    fullDesc: "A real-time vehicle detection and tracking system engineered for intelligent transportation and traffic monitoring applications. YOLOv8 is used for high-speed, high-accuracy detection of vehicle classes (cars, trucks, motorcycles, buses, bicycles) across video frames, achieving competitive mAP on standard benchmarks. DeepSORT (Deep Simple Online and Realtime Tracking) maintains consistent vehicle identities across frames by combining a Kalman filter for motion prediction with a deep appearance descriptor (Re-ID network) for robust re-identification after occlusion.\n\nThe system outputs annotated video streams with bounding boxes, class labels, confidence scores, and unique persistent track IDs. Additional analytics layers include lane-specific vehicle counting with virtual tripwire lines, speed estimation via perspective homography transform, and the generation of trajectory heat maps showing high-density traffic zones over a recording period. The pipeline is optimised for real-time processing on GPU hardware and can be adapted for live CCTV feeds or offline video analysis.",
+  },
+  {
+    id: "chest-xray",
+    cat: "AI/ML", featured: false, icon: "scan",
+    repo: "ABDESSETTAR8/Chest-X-ray-Pneumonia-Classification-using-Transfer-Learning",
+    github: "https://github.com/ABDESSETTAR8/Chest-X-ray-Pneumonia-Classification-using-Transfer-Learning",
+    download: "https://github.com/ABDESSETTAR8/Chest-X-ray-Pneumonia-Classification-using-Transfer-Learning/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "TensorFlow", "Transfer Learning", "VGG16", "ResNet50", "Grad-CAM", "Medical AI"],
+    title: "Chest X-Ray Pneumonia Classification (Transfer Learning)",
+    shortDesc: "Binary pneumonia detection from chest X-ray images using fine-tuned VGG16 and ResNet50, with Grad-CAM visualisations for clinical explainability.",
+    fullDesc: "A transfer learning pipeline for automated pneumonia detection from chest X-ray images, designed for clinical decision-support applications. Pre-trained VGG16 and ResNet50 architectures (ImageNet weights) are fine-tuned on a curated chest X-ray dataset with binary labels (Normal / Pneumonia) by unfreezing the top convolutional blocks and retraining with a small learning rate. Preprocessing includes CLAHE contrast enhancement, histogram equalisation, and lung-region cropping using segmentation masks.\n\nAggressive data augmentation (rotation ±10°, zoom, horizontal flip, brightness and contrast jitter) compensates for class imbalance. Both architectures are benchmarked on accuracy, AUC-ROC, sensitivity (recall), and specificity — metrics critical for medical screening tools where false negatives carry higher clinical cost. Grad-CAM (Gradient-weighted Class Activation Mapping) visualisations produce saliency heat maps highlighting the radiologically relevant regions (consolidations, infiltrates) that drove each positive prediction, providing radiologist-interpretable explanations essential for clinical trust and regulatory compliance.",
+  },
+  {
+    id: "player-tracking",
+    cat: "AI/ML", featured: false, icon: "dashboard",
+    repo: "ABDESSETTAR8/Automatic-Player-Tracking-in-a-Sports-Video",
+    github: "https://github.com/ABDESSETTAR8/Automatic-Player-Tracking-in-a-Sports-Video",
+    download: "https://github.com/ABDESSETTAR8/Automatic-Player-Tracking-in-a-Sports-Video/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "YOLOv8", "OpenCV", "DeepSORT", "Sports Analytics", "Homography"],
+    title: "Automatic Player Tracking in a Sports Video",
+    shortDesc: "Automated athlete detection and persistent tracking in sports broadcast video using YOLO and DeepSORT, with trajectory mapping and movement heatmaps for tactical analysis.",
+    fullDesc: "An end-to-end computer vision pipeline for automatic detection and tracking of athletes in sports broadcast video footage. YOLOv8 detects player bounding boxes in each frame with high accuracy even under partial occlusion, motion blur, or crowd backgrounds. DeepSORT assigns and maintains unique player IDs across frames through Kalman filter motion prediction and deep appearance re-identification, robustly handling crossing paths, temporary exits from frame, and extended occlusions.\n\nA homographic perspective transform projects detected player positions from the broadcast camera view onto a calibrated 2D bird's-eye tactical field diagram, enabling accurate positional analysis regardless of camera pan, tilt, or zoom. The system generates per-player trajectory paths with timestamps, cumulative movement distance and speed estimates, and spatial zone heat maps showing areas of highest activity density across a match or training session. These analytics provide coaches and performance staff with data-driven insights for tactical review, formation analysis, physical workload monitoring, and opponent scouting.",
+  },
+  {
+    id: "mammogram",
+    cat: "AI/ML", featured: false, icon: "scan",
+    repo: "ABDESSETTAR8/mammogram-preprocessing-pipeline",
+    github: "https://github.com/ABDESSETTAR8/mammogram-preprocessing-pipeline",
+    download: "https://github.com/ABDESSETTAR8/mammogram-preprocessing-pipeline/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "OpenCV", "scikit-image", "PIL", "CLAHE", "DICOM", "Medical Imaging"],
+    title: "Mammogram Preprocessing Pipeline",
+    shortDesc: "A robust, modular preprocessing pipeline for digital mammogram images covering artifact removal, breast segmentation, pectoral muscle suppression, and contrast enhancement for downstream CAD systems.",
+    fullDesc: "A comprehensive and modular preprocessing pipeline for Full-Field Digital Mammogram (FFDM) images, designed to standardise raw DICOM mammograms before they enter Computer-Aided Detection (CAD) or deep learning classification systems. Reliable preprocessing is critical in mammography because noise, artifacts, and intensity variations can severely degrade downstream model performance.\n\nThe pipeline consists of seven configurable stages: (1) DICOM loading and metadata extraction (patient ID, laterality, view position, pixel spacing); (2) background artifact and annotation label removal using morphological opening and connected-component filtering; (3) breast region segmentation via adaptive global thresholding and largest-contour selection; (4) pectoral muscle suppression using iterative Hough line detection and polygon masking to isolate the fibroglandular tissue region; (5) left/right breast normalisation and automatic flip standardisation so all images are oriented consistently; (6) contrast enhancement via CLAHE with tunable clip limit and grid size, optionally combined with gamma correction; (7) aspect-ratio-preserving resize and padding to a target resolution for model input. Each stage outputs QC comparison images (before/after) for radiologist or engineer review.",
+  },
+  {
+    id: "facebook-analysis",
+    cat: "Full-Stack", featured: false, icon: "dashboard",
+    repo: "ABDESSETTAR8/Facebook-Page-Engagement-Analysis-Project",
+    github: "https://github.com/ABDESSETTAR8/Facebook-Page-Engagement-Analysis-Project",
+    download: "https://github.com/ABDESSETTAR8/Facebook-Page-Engagement-Analysis-Project/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "EDA", "Statistical Analysis"],
+    title: "Facebook Page Engagement Analysis",
+    shortDesc: "Exploratory data analysis of Facebook page metrics to identify which content types, posting times, and formats drive the highest audience engagement.",
+    fullDesc: "A data analysis project that mines Facebook page performance data to extract actionable insights for social media content strategy. Using Pandas for data wrangling and Seaborn / Matplotlib for rich visualisations, the project systematically explores key engagement metrics across a historical post dataset: reach, impressions, likes, shares, comments, and click-through rates, broken down by post type (photo, video, status update, link share), day of week, and time of day.\n\nThe analysis pipeline covers data cleaning (handling missing values, outlier detection, type coercion), feature engineering (engagement rate calculation, recency binning), and multivariate exploratory analysis (correlation matrices, pairplots, heatmaps). Statistical hypothesis testing — Mann-Whitney U tests for non-parametric comparisons and chi-square tests for categorical associations — validates whether observed performance differences between content types and posting schedules are statistically significant or due to random variation. The project concludes with a ranked list of evidence-based content strategy recommendations, supported by interactive Matplotlib figures and an exportable summary report.",
+  },
+  // ── SaaS / Web Apps ──────────────────────────────────────────────────────────
+  {
+    id: "jawhar-branding",
+    cat: "SaaS/WebApps", featured: false, icon: "dashboard",
+    liveUrl: "https://jawharbranding.com/",
+    github: "https://jawharbranding.com/",
+    download: "",
+    report: "#",
+    tags: ["HTML", "CSS", "JavaScript", "Arabic RTL", "Responsive Design", "Branding"],
+    title: "Jawhar Branding — Luxury Brand Consultancy",
+    shortDesc: "A bilingual Arabic-first website for Jawhar Branding, a luxury brand consultancy in Algeria offering visual identity design, brand strategy, logo creation, and creative content.",
+    fullDesc: "Jawhar Branding is a premium brand consultancy agency based in Laghouat, Algeria, focused on building deep and lasting brand identities for the Algerian and North African market. The website was built with an Arabic-first, RTL-aware design to reflect the agency's cultural positioning and premium aesthetic.\n\nThe site showcases four core service pillars: Visual Identity Design (logos, colour systems, typography), Brand Strategy (market positioning, competitive analysis, brand personality), Logo Design (timeless marks balancing simplicity with impact), and Creative Content Development (visual storytelling and brand voice). A three-step methodology — Discovery & Analysis → Strategy Building → Launch — is presented through an animated process section.\n\nThe project includes a fully functional service-request form, an embedded brand showcase video, and WhatsApp and social media integration (Instagram, LinkedIn). The result is an elegant, conversion-focused web presence that positions Jawhar Branding as the premier branding partner in the region.",
+  },
+  {
+    id: "shams-marketing",
+    cat: "SaaS/WebApps", featured: false, icon: "activity",
+    liveUrl: "https://shamsmarketingagency.netlify.app/",
+    github: "https://shamsmarketingagency.netlify.app/",
+    download: "",
+    report: "#",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "Lead Generation", "SEO"],
+    title: "SMA&B — Shams Marketing Agency & Business",
+    shortDesc: "A high-conversion agency website for SMA&B, a digital marketing firm in Algeria, featuring a 10-day free trial offer, full services showcase, and WhatsApp lead capture.",
+    fullDesc: "SMA&B (Shams Marketing Agency & Business) is a professional digital marketing agency serving businesses across Algeria and the MENA region. The website was built to communicate premium positioning while driving lead generation through a compelling 10-day free trial offer with no credit card required.\n\nThe site features a polished hero section with animated performance counters, a detailed services grid covering eight areas — Content Creation, Social Media Management, Website Building, Marketing Strategies, AI Implementation, Weekly Reports, and Paid Ads Management — and a fully functional free-trial sign-up form with instant WhatsApp integration.\n\nTechnically, the project implements Facebook Pixel for conversion tracking, Open Graph meta tags for social sharing, and geo-meta tags for local SEO targeting the Algerian market. The responsive layout is optimised for mobile-first browsing and designed around a clear conversion funnel: hero awareness → service education → trial form submission.",
+  },
+  {
+    id: "gf-apology",
+    cat: "SaaS/WebApps", featured: false, icon: "brain",
+    liveUrl: "https://gfapology.netlify.app/",
+    github: "https://gfapology.netlify.app/",
+    download: "",
+    report: "#",
+    tags: ["HTML", "CSS", "JavaScript", "Creative Design", "Bilingual AR/EN", "Typography"],
+    title: "Poetic Love Letter — Bilingual Creative Web Experience",
+    shortDesc: "A poetic bilingual (Arabic & English) immersive web experience designed as a heartfelt digital letter — showcasing creative storytelling through elegant typography and emotional UI design.",
+    fullDesc: "A purely creative web project demonstrating the power of the browser as a medium for personal expression and emotional storytelling. The page is designed as a scroll-driven bilingual love letter combining classical romantic typography with modern CSS animations and decorative motifs.\n\nThe design uses a dark, celestial aesthetic — deep backgrounds, flowing serif typefaces, Victorian floral separators (❦ ✿ ⁂), and glowing text effects — to create an immersive atmosphere of intimacy and poetry. Both Arabic (RTL, 'آسف يا قمري') and English prose are woven together seamlessly, demonstrating full bilingual web layout capability and cultural sensitivity.\n\nThis project showcases the ability to translate emotional creative briefs into refined digital experiences — a skill increasingly in demand for luxury brands, cultural institutions, and premium client campaigns where aesthetic impact and emotional resonance are as important as technical execution.",
+  },
+  {
+    id: "gf-webb",
+    cat: "SaaS/WebApps", featured: false, icon: "brain",
+    liveUrl: "https://gfwebb.netlify.app/",
+    github: "https://gfwebb.netlify.app/",
+    download: "",
+    report: "#",
+    tags: ["HTML", "CSS", "JavaScript", "Scroll Animations", "Creative Design", "Responsive"],
+    title: "My Moon — Romantic Personal Web Experience",
+    shortDesc: "A scroll-animated personal tribute website with icon-card sections, a romantic letter, and a promises timeline — demonstrating creative frontend design and emotional UX without any framework.",
+    fullDesc: "A creative personal web project that demonstrates frontend storytelling and emotional UX design, built entirely with vanilla HTML, CSS, and JavaScript — no frameworks, no libraries, just craftsmanship.\n\nThe site is structured as a scroll-driven experience with six distinct content sections: an opening hero with animated celestial motifs and a looping tagline, a 'Why I Love You' grid with six icon-accented feature cards, an animated word-cloud accent section, a full-width romantic letter, a six-item promises timeline, and a closing devotion statement with a pulsing heart animation.\n\nThe design language uses a deep navy and electric blue colour palette with soft golden glows, floating decorative elements, and careful typographic hierarchy — all delivering a consistent sense of warmth across every scroll position. The project highlights mastery of CSS custom properties, intersection-observer-driven reveal animations, responsive grid layout, and accessible semantic HTML — delivered with zero build tooling.",
+  },
+  {
+    id: "scholar-school-mgmt",
+    cat: "SaaS/WebApps", featured: true, icon: "network",
+    liveUrl: "https://schoolmanagementwebappp.netlify.app/login",
+    github: "https://schoolmanagementwebappp.netlify.app/login",
+    download: "",
+    report: "#",
+    tags: ["Next.js", "React", "Prisma", "Authentication", "RBAC", "SaaS", "Multi-role"],
+    title: "Scholar — School Management SaaS Platform",
+    shortDesc: "A full-featured school management SaaS platform serving admins, teachers, students, parents, and staff in one secure workspace — covering attendance, scheduling, and enrollment.",
+    fullDesc: "Scholar is a modern, full-stack SaaS platform built to digitalise and streamline school operations end-to-end. The platform serves five distinct user roles — School Administrators, Teachers, Students, Parents, and Staff — each with a tailored dashboard, scoped permissions, and a dedicated feature set, all within a single unified and secure workspace.\n\nCore modules include: Attendance Management (digital roll calls, automated absence notifications, exportable attendance reports), Class & Schedule Management (drag-and-drop timetable builder, room allocation, subject-teacher assignments), Student Enrollment (multi-step registration workflows, document uploads, automatic class assignment), and a Parent Portal providing real-time visibility into a child's attendance and academic progress.\n\nThe platform is built on a modern tech stack: Next.js for server-rendered React UI with file-system routing and API routes, Prisma ORM over a relational database for structured data integrity and type-safe queries, and a JWT-based authentication system with role-based access control (RBAC) ensuring each user sees only what they are permitted to access. The Scholar brand identity — clean, professional, and accessibility-first — reduces administrative overhead so educators can focus on what matters: teaching.",
+  },
+
+  {
+    id: "covid-prediction",
+    cat: "AI/ML", featured: false, icon: "brain",
+    repo: "ABDESSETTAR8/Covid-prediction",
+    github: "https://github.com/ABDESSETTAR8/Covid-prediction",
+    download: "https://github.com/ABDESSETTAR8/Covid-prediction/archive/refs/heads/main.zip",
+    report: "#",
+    tags: ["Python", "Scikit-learn", "XGBoost", "SHAP", "Logistic Regression", "Healthcare ML"],
+    title: "Covid-19 Prediction",
+    shortDesc: "A machine learning system for COVID-19 positive case classification and severity risk stratification from patient clinical data, with SHAP explainability.",
+    fullDesc: "A supervised machine learning project for COVID-19 positive case classification and patient severity risk stratification using structured clinical and demographic data. The feature set includes patient age, gender, comorbidities (diabetes, hypertension, immunosuppression, cardiovascular disease), reported symptoms and their onset timeline, and available vital sign measurements.\n\nFour algorithms are trained and rigorously cross-validated (stratified 5-fold): Logistic Regression (interpretable baseline), Random Forest, Gradient Boosted Trees, and XGBoost. Model performance is evaluated on accuracy, precision, recall, F1-score, and AUC-ROC — with particular emphasis on recall (sensitivity) to minimise false negatives in a screening context where missing a true positive carries high clinical cost. An operating-point optimisation step tunes the classification threshold to balance sensitivity and specificity according to a configurable clinical priority. SHAP (SHapley Additive exPlanations) values provide both global feature importance rankings and per-patient local explanations, making the model's decisions transparent and clinically interpretable for medical professionals.",
+  },
+];
+
+// ── ICONS SVG ─────────────────────────────────────────────────────────────────
+const ICONS = {
+  brain: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-3.17A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.44-3.17A2.5 2.5 0 0 0 14.5 2z"/></svg>`,
+  network: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M12 14v2"/></svg>`,
+  activity: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+  dashboard: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
+  scan: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>`,
+};
+
+function catKey(cat){ return cat==="AI/ML"?"AIML":cat==="Simulation"?"Simulation":cat==="SaaS/WebApps"?"SaaSApps":"FullStack"; }
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let currentLocale = localStorage.getItem("portfolio-locale") || "en";
+let activeFilter  = "All";
+
+// ── i18n ──────────────────────────────────────────────────────────────────────
+function t(key){ return (T[currentLocale]&&T[currentLocale][key])||T.en[key]||key; }
+
+function applyLocale(locale){
+  currentLocale = locale;
+  localStorage.setItem("portfolio-locale", locale);
+  const isRTL = locale==="ar";
+  document.documentElement.lang = locale;
+  document.documentElement.dir  = isRTL?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.getAttribute("data-i18n")));
+  document.getElementById("lang-label").textContent = locale.toUpperCase();
+  document.querySelectorAll(".lang-option").forEach(b=>b.classList.toggle("active",b.dataset.locale===locale));
+  renderCredentials(); renderFeatured(); renderLibrary(); renderBio();
+}
+
+// ── RENDER CREDENTIALS ────────────────────────────────────────────────────────
+function renderCredentials(){
+  const c=document.getElementById("credentials-list");
+  c.innerHTML=[0,1,2].map(i=>`
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+      <div class="card timeline-card">
+        <span class="cred-year">${t("cred."+i+".year")}</span>
+        <div class="cred-title">${t("cred."+i+".title")}</div>
+        <div class="cred-inst">${t("cred."+i+".inst")}</div>
+        <div class="cred-desc">${t("cred."+i+".desc")}</div>
+      </div>
+    </div>`).join("");
+  observeReveal();
+}
+
+// ── PROJECT CARD HTML ──────────────────────────────────────────────────────────
+function projectCardHTML(p){
+  const catLabel = t("projects.cat."+catKey(p.cat));
+  return `
+    <div class="card project-card" onclick="openModal('${p.id}')">
+      <div class="card-hover-overlay">
+        <span class="card-hover-text">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          ${t("projects.viewProject")}
+        </span>
+      </div>
+      <div class="project-card-header">
+        <div class="project-icon">${ICONS[p.icon]||ICONS.brain}</div>
+        <span class="project-cat">${catLabel}</span>
+      </div>
+      <div class="project-title">${p.title}</div>
+      <div class="project-desc">${p.shortDesc}</div>
+      <div class="project-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+      <div class="project-links">
+        <a class="project-link" href="${p.liveUrl||p.github}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+          ${p.liveUrl
+            ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Live Site`
+            : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub`
+          }
+        </a>
+        <a class="project-link secondary" onclick="openModal('${p.id}');event.stopPropagation()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Details
+        </a>
+      </div>
+    </div>`;
+}
+
+function renderFeatured(){
+  document.getElementById("featured-grid").innerHTML =
+    PROJECTS.filter(p=>p.featured).map(projectCardHTML).join("");
+  observeReveal();
+}
+
+function renderLibrary(){
+  // filter bar
+  const bar=document.getElementById("filter-bar");
+  ["All","AI/ML","Simulation","Full-Stack","SaaS/WebApps"].forEach(f=>{
+    const label=f==="All"?t("projects.filterAll"):t("projects.cat."+catKey(f));
+    const btn=document.createElement("button");
+    btn.className="filter-btn"+(activeFilter===f?" active":"");
+    btn.dataset.filter=f;
+    btn.textContent=label;
+    btn.onclick=()=>{activeFilter=f;renderLibrary()};
+    bar.appendChild(btn);
+  });
+  // grid
+  const shown=activeFilter==="All"?PROJECTS:PROJECTS.filter(p=>p.cat===activeFilter);
+  document.getElementById("library-grid").innerHTML=shown.map(projectCardHTML).join("");
+  observeReveal();
+}
+// need to clear bar before re-render
+const _renderLibrary=renderLibrary;
+renderLibrary=function(){document.getElementById("filter-bar").innerHTML="";_renderLibrary();}
+
+function renderBio(){
+  document.getElementById("bio-paragraphs").innerHTML=
+    ["p1","p2","p3"].map(k=>`<p class="bio-text">${t("bio."+k)}</p>`).join("");
+}
+
+// ── PROJECT MODAL ──────────────────────────────────────────────────────────────
+function openModal(id){
+  const p=PROJECTS.find(x=>x.id===id);
+  if(!p)return;
+
+  // Image: try GitHub OG image, fallback to icon placeholder
+  const imgWrap=document.getElementById("modal-image-wrap");
+  const ogUrl=`https://opengraph.githubassets.com/1/${p.repo}`;
+  imgWrap.innerHTML=`
+    <img class="modal-project-image" src="${ogUrl}" alt="${p.title}"
+         onerror="this.parentElement.innerHTML='<div class=\\'modal-image-placeholder\\'>${ICONS[p.icon]||ICONS.brain}</div>'" />`;
+
+  document.getElementById("modal-cat-badge").textContent = t("projects.cat."+catKey(p.cat));
+  document.getElementById("modal-title-text").textContent = p.title;
+  document.getElementById("modal-tags").innerHTML = p.tags.map(tg=>`<span class="modal-tag">${tg}</span>`).join("");
+  document.getElementById("modal-desc").innerHTML = p.fullDesc.replace(/\n\n/g,"</p><p style='margin-top:1rem'>").replace(/\n/g," ");
+  document.getElementById("modal-report").href = p.report;
+
+  // Re-apply i18n on modal static labels
+  document.querySelectorAll("#project-modal [data-i18n]").forEach(el=>el.textContent=t(el.getAttribute("data-i18n")));
+
+  // Live site vs GitHub button
+  const githubBtn = document.getElementById("modal-github");
+  if(p.liveUrl){
+    githubBtn.href = p.liveUrl;
+    githubBtn.querySelector("[data-i18n='modal.github']").textContent = t("modal.visitSite");
+  } else {
+    githubBtn.href = p.github;
+  }
+  // Download button — hide for web projects with no download
+  const dlBtn = document.getElementById("modal-download");
+  if(p.download){
+    dlBtn.style.display = "";
+    dlBtn.href = p.download;
+  } else {
+    dlBtn.style.display = "none";
+  }
+  // Report button — hide for live web projects
+  const rptBtn = document.getElementById("modal-report");
+  if(p.liveUrl){
+    rptBtn.style.display = "none";
+  } else {
+    rptBtn.style.display = "";
+    rptBtn.href = p.report;
+  }
+
+  const modal=document.getElementById("project-modal");
+  modal.scrollTop=0;
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
+}
+
+function closeModal(){
+  document.getElementById("project-modal").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+// Close on ESC
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────────────────────
+function observeReveal(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll(".reveal:not(.visible)").forEach(el=>obs.observe(el));
+}
+
+// ── NAV SCROLL ───────────────────────────────────────────────────────────────
+window.addEventListener("scroll",()=>document.getElementById("main-nav").classList.toggle("scrolled",scrollY>30));
+
+// ── LANG DROPDOWN ─────────────────────────────────────────────────────────────
+const langBtn=document.getElementById("lang-btn"),langDD=document.getElementById("lang-dropdown");
+langBtn.addEventListener("click",()=>{langDD.classList.toggle("open");langBtn.classList.toggle("open")});
+document.querySelectorAll(".lang-option").forEach(b=>b.addEventListener("click",()=>{applyLocale(b.dataset.locale);langDD.classList.remove("open");langBtn.classList.remove("open")}));
+document.addEventListener("click",e=>{if(!langBtn.contains(e.target)&&!langDD.contains(e.target)){langDD.classList.remove("open");langBtn.classList.remove("open")}});
+
+// ── MOBILE MENU ───────────────────────────────────────────────────────────────
+document.getElementById("hamburger").addEventListener("click",()=>document.getElementById("mobile-menu").classList.toggle("open"));
+function closeMobileMenu(){document.getElementById("mobile-menu").classList.remove("open")}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+document.getElementById("copy-year").textContent=new Date().getFullYear();
+applyLocale(currentLocale);
+observeReveal();
+</script>
+</body>
+</html>

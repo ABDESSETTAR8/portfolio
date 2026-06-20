@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(160deg, #1877F2 0%, #1464D8 60%, #1260D0 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #FFD700;
+  color: #1260D0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1260D0;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 4px;
+}
+
+/* Gradient yellow text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFE566 0%, #FFD700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Shimmer text */
+.text-shimmer {
+  background: linear-gradient(90deg, #FFD700, #FFE566, #FFD700, #FFE566);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Section headings */
+.section-heading {
+  @apply font-serif text-3xl md:text-4xl font-bold text-center mb-2 text-yellow;
+}
+
+.section-subheading {
+  @apply text-center text-yellow-light/70 tracking-[0.2em] uppercase text-xs md:text-sm mb-12;
+}
+
+/* Card base */
+.card {
+  @apply rounded-2xl border border-yellow/20 bg-blue-card/60 backdrop-blur-sm
+         transition-all duration-300 hover:border-yellow/60 hover:shadow-gold-sm;
+}
+
+/* Pill button base */
+.pill-btn {
+  @apply flex items-center justify-center gap-2 rounded-full border-2 border-yellow
+         px-7 py-3.5 text-sm font-semibold text-yellow transition-all duration-300
+         hover:bg-yellow hover:text-blue-darker hover:shadow-gold hover:scale-105;
+}
+
+.pill-btn-filled {
+  @apply flex items-center justify-center gap-2 rounded-full
+         bg-gold-gradient px-7 py-3.5 text-sm font-semibold text-blue-darker
+         shadow-gold-sm transition-all duration-300 hover:shadow-gold hover:scale-105;
+}
+
+/* Arabic typography */
+:dir(rtl) body {
+  font-family: var(--font-noto-arabic), var(--font-inter), sans-serif;
+}
+
+:dir(rtl) .font-serif {
+  font-family: var(--font-noto-arabic), serif;
+}
+
+:dir(rtl) .section-subheading {
+  letter-spacing: 0.05em;
+}
