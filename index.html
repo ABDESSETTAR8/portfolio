@@ -692,6 +692,18 @@ const PROJECTS = [
     fullDesc: "MICHWAR ('مشوار' — Arabic for 'a trip') is a complete ride-hailing platform built from the ground up for the Algerian market. The system comprises a Flutter/Dart mobile application, a Firebase backend with Cloud Functions, and a web-based Admin Portal, all working together to connect passengers with trusted drivers across 48 wilayas.\n\nCore technical features include: Geohash proximity matching using Firestore range queries to find the nearest available driver in seconds without full-collection scans; Firebase Auth with math CAPTCHA and rate-limiting Cloud Functions to prevent abuse; a DZD wallet system where drivers maintain a prepaid balance with server-side commission auto-deduction and full transaction history; a loyalty rewards engine granting passengers MICHWAR Points on every completed ride, unlocking Standard, Eco, and Premium tiers; dual-role accounts allowing a single user to switch between passenger and driver mode after document verification; and a one-tap in-app SOS feature that transmits live GPS coordinates and ride context directly to the admin team.\n\nThe Admin Portal (https://abdessettar8.github.io/michwar-/admin/) provides full platform management: user and driver account oversight, ride operations monitoring, wallet top-ups, SOS alert management, and app configuration — all within a secure, access-restricted dashboard. The mobile app is distributed as a direct APK download (Android 5.0+, under 20 MB) bypassing the Play Store, making it immediately accessible across Algeria.",
   },
   {
+    id: "michwar-admin",
+    cat: "SaaS/WebApps", featured: false, icon: "dashboard",
+    liveUrl: "https://abdessettar8.github.io/michwar-/admin/",
+    github: "https://github.com/ABDESSETTAR8/michwar-",
+    download: "",
+    report: "#",
+    tags: ["HTML", "CSS", "JavaScript", "Firebase", "Admin Dashboard", "Real-time", "PWA"],
+    title: "MICHWAR — Admin Portal",
+    shortDesc: "A secure web-based admin portal for the MICHWAR ride-hailing platform — managing users, drivers, rides, DZD wallets, SOS alerts, and app configuration from a single dashboard.",
+    fullDesc: "The MICHWAR Admin Portal is the operations backbone of the MICHWAR ride-hailing platform, providing authorised administrators with full visibility and control over every aspect of the platform in real time.\n\nThe dashboard is organised into five management modules: People (Users and Drivers) — view, verify, and moderate passenger and driver accounts, including document verification status and account suspension; Operations (Rides) — monitor active, completed, and cancelled rides with full trip context including route, fare, driver, and passenger details; Wallets — inspect and top up driver DZD prepaid balances, review transaction histories, and manage commission records; SOS Alerts — respond to passenger distress signals with live GPS context and ride information; and App Settings — configure platform-wide parameters.\n\nAccess is restricted to authorised administrators via a Firebase Auth login with a demo admin account available for portfolio review. The portal is built as a standalone web application with a dark teal theme, real-time Firestore listeners that push data updates to the dashboard without page refresh, and a responsive layout that functions on both desktop and tablet devices.",
+  },
+  {
     id: "tawkil-pwa",
     cat: "SaaS/WebApps", featured: false, icon: "network",
     liveUrl: "https://tawkil-pwa.vercel.app/",
