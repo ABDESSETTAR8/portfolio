@@ -9,11 +9,11 @@ const config: Config = {
     extend: {
       colors: {
         blue: {
-          DEFAULT: "#1877F2",
-          light: "#2E89F5",
-          dark: "#1464D8",
-          darker: "#0E54B8",
-          card: "#1260D0",
+          DEFAULT: "#0B2C5E",
+          light: "#1E4E8C",
+          dark: "#143A6B",
+          darker: "#0A2850",
+          card: "#0F3260",
         },
         yellow: {
           DEFAULT: "#FFD700",
@@ -22,11 +22,11 @@ const config: Config = {
         },
         // keep legacy aliases so existing class names keep working
         navy: {
-          DEFAULT: "#1877F2",
-          light: "#1260D0",
-          dark: "#0E54B8",
+          DEFAULT: "#0B2C5E",
+          light: "#0F3260",
+          dark: "#0A2850",
         },
-        charcoal: "#1464D8",
+        charcoal: "#143A6B",
         gold: {
           DEFAULT: "#FFD700",
           light: "#FFE566",
@@ -39,11 +39,11 @@ const config: Config = {
       },
       backgroundImage: {
         "site-gradient":
-          "linear-gradient(160deg, #1877F2 0%, #1464D8 60%, #1260D0 100%)",
+          "linear-gradient(160deg, #0B2C5E 0%, #143A6B 60%, #0F3260 100%)",
         "gold-gradient":
           "linear-gradient(135deg, #FFE566 0%, #FFD700 100%)",
         "navy-gradient":
-          "linear-gradient(160deg, #1877F2 0%, #1464D8 60%, #1260D0 100%)",
+          "linear-gradient(160deg, #0B2C5E 0%, #143A6B 60%, #0F3260 100%)",
       },
       boxShadow: {
         gold: "0 0 28px rgba(255, 215, 0, 0.45)",

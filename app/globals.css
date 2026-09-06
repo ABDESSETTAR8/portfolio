@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: linear-gradient(160deg, #1877F2 0%, #1464D8 60%, #1260D0 100%);
+  background: linear-gradient(160deg, #0b2c5e 0%, #081e40 60%, #04122a 100%);
   background-attachment: fixed;
   color: #ffffff;
   min-height: 100vh;
@@ -15,14 +15,14 @@ body {
 
 ::selection {
   background: #FFD700;
-  color: #1260D0;
+  color: #0b2c5e;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1260D0;
+background: #0F3260;
 }
 ::-webkit-scrollbar-thumb {
   background: #FFD700;
@@ -58,7 +58,7 @@ body {
 
 /* Card base */
 .card {
-  @apply rounded-2xl border border-yellow/20 bg-blue-card/60 backdrop-blur-sm
+  @apply rounded-2xl border border-yellow/20 bg-blue-card/30 backdrop-blur-sm
          transition-all duration-300 hover:border-yellow/60 hover:shadow-gold-sm;
 }
 
